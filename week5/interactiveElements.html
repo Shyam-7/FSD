@@ -1,0 +1,48 @@
+<!-- File: interactiveElements.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive JavaScript Elements</title>
+</head>
+<body>
+    <!-- Question 5: Set the background color of a paragraph -->
+    <p id="myParagraph">This is a paragraph.</p>
+    <button onclick="document.getElementById('myParagraph').style.backgroundColor = 'yellow';">Set Background Color</button>
+
+    <!-- Question 6: Mobile number validation using form -->
+    <form id="numberForm">
+        <input type="text" id="mobileNumber" placeholder="Enter mobile number">
+        <button type="button" onclick="validateNumber()">Check Number</button>
+        <p id="result"></p>
+    </form>
+    <script>
+    function validateNumber() {
+        const number = document.getElementById("mobileNumber").value;
+        const regex = /^[0-9]{10}$/;
+        document.getElementById("result").innerText = regex.test(number) ? "Valid mobile number." : "Invalid mobile number.";
+    }
+    </script>
+
+    <!-- Question 7: Student registration form with validation -->
+    <form id="registrationForm">
+        Name: <input type="text" id="name" required><br>
+        Email: <input type="email" id="email" required><br>
+        Password: <input type="password" id="password" required><br>
+        <button type="button" onclick="validateForm()">Register</button>
+    </form>
+    <script>
+    function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        if (!name || !email || !password) {
+            alert("All fields are required!");
+            return false;
+        }
+        alert("Registration Successful!");
+    }
+    </script>
+</body>
+</html>
