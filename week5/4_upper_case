@@ -1,0 +1,7 @@
+function isFirstCharUpperCase(str) {
+    return /^[A-Z]/.test(str);
+}
+
+// Example usage:
+console.log(isFirstCharUpperCase("Hello")); // Output: true
+console.log(isFirstCharUpperCase("hello")); // Output: false
